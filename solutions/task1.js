@@ -5,7 +5,7 @@
 console.log("Hello, Node.js!");
 
 // Create a variable with student name and print greeting
-const studentName = "Alex Johnson";
+const studentName = "Student";
 console.log(`Hello, ${studentName}!`);
 
 // Create a variable with current year

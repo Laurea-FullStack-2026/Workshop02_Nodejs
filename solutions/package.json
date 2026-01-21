@@ -21,6 +21,6 @@
   "author": "Laurea FullStack 2026",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "4.1.2"
   }
 }
