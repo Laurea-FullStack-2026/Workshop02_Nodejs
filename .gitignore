@@ -1,1 +1,32 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
 
+# Environment variables
+.env
+.env.local
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build outputs
+dist/
+build/
+*.log
+
+# Temporary files
+*.tmp
+tmp/
+temp/
+
+# Data files created by tasks
+data.txt
