@@ -40,8 +40,9 @@ const server = http.createServer((req, res) => {
             // Contact page
             filePath = path.join(__dirname, 'public', 'contact.html');
         } else if (req.url.startsWith('/styles/')) {
-            // CSS files
-            filePath = path.join(__dirname, 'public', req.url);
+            // CSS files - sanitize the path to prevent directory traversal
+            const safePath = path.normalize(req.url).replace(/^(\.\.[\/\\])+/, '');
+            filePath = path.join(__dirname, 'public', safePath);
         } else {
             // Unknown path -> 404
             filePath = path.join(__dirname, 'public', '404.html');
@@ -67,11 +68,7 @@ const server = http.createServer((req, res) => {
                 }
             } else {
                 // Success
-                if (!res.statusCode || res.statusCode === 200) {
-                    res.writeHead(200, { 'Content-Type': contentType });
-                } else {
-                    res.writeHead(res.statusCode, { 'Content-Type': contentType });
-                }
+                res.writeHead(res.statusCode || 200, { 'Content-Type': contentType });
                 res.end(content, 'utf-8');
             }
         });
