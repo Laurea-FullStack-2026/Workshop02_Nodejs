@@ -100,5 +100,6 @@ The `/api/time` endpoint returns current date/time in JSON:
   - `path` - Path handling
 
 ## License
+Copyright © 2026 Jari Kovis, Laurea Fullstack 2026
 
 ISC
